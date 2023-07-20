@@ -10,3 +10,6 @@ Then I used convert.py to convert the npz file generted to a csv file. I noticed
 Then I run the following command to train (using curvature of 0.1 as an example): 
 
 >python train.py --task lp --dataset random --model HGCN --lr 0.01 --dim 16 --num-layers 2 --num-layers 2 --act relu --bias 1 --dropout 0 --weight-decay 0 --manifold PoincareBall --normalize-feats 0 --log-freq --c -0.1
+
+
+I found that the model trains for the maximum number of steps allowed (which is 5000), and then learn very little with depth of 5. However, this problem seems to go away if depth is increased. 
